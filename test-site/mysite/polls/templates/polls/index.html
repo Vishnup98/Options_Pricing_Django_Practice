@@ -1,0 +1,18 @@
+{% if options_list %}
+    <ul>
+    {% for option in options_list %}
+        <li><a href="{% url 'options:price' option.id%}"> 
+            Option with parameters:<br> 
+            Option Style: {{option.style}}<br>
+            Current Price: {{option.curr_price}}<br>
+            Strike Price: {{option.strike_price}}<br>
+            Dividend Yield: {{option.dividend_yield}}<br>
+            Risk Free Rate: {{option.risk_free_rate}}<br>
+            Time to Maturity: {{option.time_to_maturity}}<br>
+            <br><br>
+         </a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No options are available.</p>
+{% endif %}
